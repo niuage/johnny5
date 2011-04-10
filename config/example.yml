@@ -1,0 +1,51 @@
+development:
+  server:
+    port: 3001
+    host: localhost
+  bots:
+    bot_1:
+      active: 1
+      campfire:
+        config:
+          token: "campfire_token"
+          # account.campfirenow.com
+          account: account
+          ssl: 1
+        rooms:
+          # list of rooms the bot is listening to
+          - id: 169602
+          - id: 392773
+          - id: 392800
+      engines:
+        # engine list
+        # "name" should be the engine class name
+        - name: Engine_1
+        - name: Engine_2
+        - name: Engine_3
+    bot_2:
+      active: 0
+      campfire:
+        config:
+          token: "campfire_token"
+          account: account
+          ssl: 1
+        rooms:
+          - id: 348877
+      engines:
+        - name: Engine_2
+  engines:
+    # no config
+    Engine_1: 1
+    # config
+    Engine_2:
+      api:
+        # api key
+        key: "key"
+        # secret, account name...
+        secret: secret
+    Engine_3:
+      api:
+        key: "key"
+        secret: secret
+      attr_1: "SF"
+      attr_2: "NY"
