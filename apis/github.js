@@ -68,8 +68,14 @@ var GithubApi = Class.create(Api, {
         return;
       }
 
+      var commit_messages = "";
+
+      commit.modified.each(function (e) {
+        commit_messages = commit_messages + e.diff + "\n";
+      });
+
       callback({
-        body: commit.modified[0].diff,
+        body: commit_messages,
         type: "PasteMessage"
       });
     });

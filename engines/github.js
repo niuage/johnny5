@@ -22,7 +22,7 @@ var Github = Class.create(Engine, {
       this.github.get_branch_commits(matches, callback);
     });
     bot.on("/commit\\s?(.*)", function(message, matches, callback) {
-      matches = this.parser(matches[0].split(" ")).usage("/log -u [user] -r [repo] -b [branch] -i [commit_id]").demand(["r", "i"]);
+      matches = this.parser(matches[0].split(" ")).usage("/commit -u [user] -r [repo] -b [branch] -i [commit_id]").demand(["r", "i"]);
       this.github.get_specific_commit(matches, callback);
     })
   },
